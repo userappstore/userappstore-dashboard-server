@@ -16,37 +16,12 @@
       "@userappstore/stripe-subscriptions",
       "@userappstore/stripe-connect",
       "@userappstore/organizations"
-    ],
-    "content": [
-      "/src/content/installs-and-collections-menu.js",
-      "/src/content/remap-install-links.js",
-      "/src/content/remap-project-links.js",
-      "/src/content/remap-administrator-links.js",
-      "/src/content/install-account-menu.js",
-      "/src/content/server-administrator-menu.js",
-      "/src/content/reduced-iframe-sandbox.js"
-    ],
-    "server": [
-      "/src/server/clean-deleted-subscriptions.js",
-      "/src/server/remove-template-after-authorization.js",
-      "/src/server/connected-subscription-webhooks.js",
-      "/src/server/skip-urls-from-within-templates.js",
-      "/src/server/api-as-alternative-server.js",
-      "/src/server/uploading-app-store-assets.js",
-      "/src/server/serverid-in-url.js",
-      "/src/server/installid-in-url.js",
-      "/src/server/connect-webhook-key.js"
     ]
   },
   "dependencies": {
     "@userappstore/storage-cache-redis": "git+https://github.com/userappstore/storage-cache-redis.git",
     "@userappstore/storage-postgresql": "git+https://github.com/userappstore/storage-postgresql.git",
-    "@userappstore/app-store-dashboard-server": "git+https://github.com/userappstore/app-store-dashboard-server.git",
-    "@userappstore/dashboard": "git+https://github.com/userappstore/dashboard.git",
-    "@userappstore/maxmind-geoip": "git+https://github.com/userappstore/maxmind-geoip.git",
-    "@userappstore/organizations": "git+https://github.com/userappstore/organizations.git",
-    "@userappstore/stripe-connect": "git+https://github.com/userappstore/stripe-connect.git",
-    "@userappstore/stripe-subscriptions": "git+https://github.com/userappstore/stripe-subscriptions.git"
+    "@userappstore/app-store-dashboard-server": "git+https://github.com/userappstore/app-store-dashboard-server.git"
   },
   "devDependencies": {
     "puppeteer": "^1.15.0",
