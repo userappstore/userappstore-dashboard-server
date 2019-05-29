@@ -38,6 +38,7 @@ Content handlers:
 @userappstore/stripe-subscriptions/src/content/content-security-policy.js
 
 Server handlers:
+@userappstore/stripe-subscriptions/src/server/bind-stripekey.js
 @userappstore/app-store-dashboard-server/src/server/clean-deleted-subscriptions.js
 @userappstore/app-store-dashboard-server/src/server/remove-template-after-authorization.js
 @userappstore/app-store-dashboard-server/src/server/connected-subscription-webhooks.js
