@@ -12,16 +12,14 @@
   "dashboard": {
     "title": "UserAppStore",
     "modules": [
-      "@userappstore/maxmind-geoip",
-      "@userappstore/stripe-subscriptions",
-      "@userappstore/stripe-connect",
-      "@userappstore/organizations"
-    ]
+      "@userappstore/app-store-dashboard-server"
+    ],
+    "template.html": "/node_modules/@userappstore/app-store-dashboard-server/src/template.html"
   },
   "dependencies": {
+    "@userappstore/app-store-dashboard-server": "git+https://github.com/userappstore/app-store-dashboard-server.git",
     "@userappstore/storage-cache-redis": "git+https://github.com/userappstore/storage-cache-redis.git",
-    "@userappstore/storage-postgresql": "git+https://github.com/userappstore/storage-postgresql.git",
-    "@userappstore/app-store-dashboard-server": "git+https://github.com/userappstore/app-store-dashboard-server.git"
+    "@userappstore/storage-postgresql": "git+https://github.com/userappstore/storage-postgresql.git"
   },
   "devDependencies": {
     "puppeteer": "^1.15.0",
