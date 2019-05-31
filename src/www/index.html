@@ -1,0 +1,198 @@
+<!doctype html>
+<html auth="false" template="false">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>UserAppStore</title>
+    <link href="/public/pure-min.css" rel="stylesheet" />
+    <link href="/public/custom.css" rel="stylesheet" />
+    <style>
+    header { display: flex; justify-content: space-between }
+    header h1 { height: 2rem; line-height: 2rem; opacity: 0.8; font-size: 2rem }
+    header form { justify-content: flex-start; flex-direction: row; align-items: right }
+    header form button { display: inline-block !important; margin-right: 0.5rem !important }
+    header form label { color: rgba(255, 255, 255, 0.5) }
+    header form label,
+    header form input { display: block }
+    header form input { background-color: rgba(255, 255, 255, 0.85) }
+    header form input:active, 
+    header form input:focus { background-color: #FFF }
+    header form input { width: 12rem; padding: 0.5rem !important; border-radius: 0 !important }
+    header form .pure-control-group { display: inline-block; margin-right: 1rem }
+    body { background-color: #036; padding: 2rem }
+    h1 { color: #FFF; font-size: 1rem }
+    h2 { color: #FFF; font-size: 3rem; margin: 0 }
+    h3 { color: #FFF; font-size: 2rem; margin: 0 }
+    p { color: #FFF; font-size: 1.6rem; max-width: 60rem }
+    p a { color: #0FC }
+    .pure-g { min-width: 550px; margin-bottom: 2rem; background-color: #369; border-radius: 1rem; padding: 2rem }
+    .pure-g:first-of-type { background-color: #FFF }
+    .pure-g:first-of-type h3 { margin-bottom: 1rem }
+    .pure-g:first-of-type h2,
+    .pure-g:first-of-type h3,
+    .pure-g:first-of-type p,
+    .pure-g:first-of-type label { color: #036 }
+    .pure-g:first-of-type p a { color: #630 }
+    .pure-g form { margin-left: 4rem }
+    .pure-g form p { font-size: 1.2rem }
+    .pure-g form input { max-width: 25rem; width: 100%; padding: 0.75rem !important }
+    .pure-g form button { background-color: #396; padding: 0.5rem 1rem; font-size: 1.6rem; border-radius: 0.25rem }
+    .pure-g form .pure-control-group { margin-bottom: 1rem !important }
+    .pure-g form .pair .pure-control-group { display: inline-block; width: 12rem }
+    .pure-g form .pair .pure-control-group input { width: 12rem }
+    .pure-g form .pair .pure-control-group:first-of-type{ margin-right: 1rem }
+    .pure-g form label { color: #FFF }
+    .powered { margin: 0; padding: 1rem; margin-bottom: 2rem }
+    .powered h2 { font-weight: normal; color: #FFF }
+    .powered h3 { margin: 1rem 0 0 0; font-weight: normal; color: rgba(255, 255, 255, 0.5) }
+    .powered p { margin: 0.5rem 0 0.25rem 0; font-size: 1rem }
+    .powered p a { color: #0FC }
+    .app-store { display: inline-block; padding: 1rem; line-height: 2rem !important; color: #FFF; font-size: 1.4rem; background-color: rgba(0, 0, 0, 0.5); border-radius: 0.5rem; text-decoration: none; margin: 1rem }
+    .app-store svg { width: 2rem; height: 2rem; display: block; float: left; margin-right: 0.5rem; fill: #FFF }
+    .powered table { max-width: 100% }
+    .powered div,
+    .powered div a { font-size: 0.9rem; color: brown; margin-right: 0.5rem }
+    @media (max-width: 750px) {
+      header { justify-content: initial; display: block }
+    }
+    @media (max-width: 750px) {
+      .pure-u-2-5,
+      .pure-u-3-5 { width: 100% }
+    }
+    @media (min-width: 1920px) {
+      .pure-g form { margin-left: 0 }
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>UserAppStore</h1>
+      <form action="/account/signin" method="POST" class="pure-form pure-form-stacked entry-form">
+        <div class="pure-control-group">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" maxlength="1000" />
+        </div>
+        <div class="pure-control-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" maxlength="1000" />
+        </div>
+        <button id="submit-button" type="submit" class="pure-button pure-button-primary">Sign in</button>
+      </form>
+    </header>
+    <div class="pure-g">
+      <div class="pure-u-3-5">
+        <h2>A platform &amp; app store for web apps</h2>
+        <p>Our subscription app store makes it easy to create, discover and use new services and puts all your bills, cancellation and refunding in your control.</p>
+        <p>On our app store you can publish web applications hosted on your own server or code apps in our project editor.</p>
+        <p>If you already wrote your web application check out the <a href="#">integration guide</a> for how to become compatible.</p>
+      </div>
+      <div class="pure-u-2-5">
+        <form action="/account/register" method="POST" class="pure-form pure-form-stacked entry-form">
+          <fieldset>
+            <h3>Register your free account</h3>
+            <div id="message-container"></div>
+            <div class="pure-control-group">
+              <label for="username">Signin username</label>
+              <input placeholder="8+ characters" name="username" id="username" type="text" maxlength="1000" />
+            </div>
+            <div class="pair">
+              <div class="pure-control-group">
+                <label for="password">Password</label>
+                <input placeholder="8+ characters" name="password" id="password" type="password" maxlength="1000" />
+              </div>
+              <div class="pure-control-group">
+                <label for="confirm">Confirm password</label>
+                <input name="confirm" id="confirm" type="password" maxlength="1000" />
+              </div>
+            </div>
+            <div class="pure-control-group">
+              <label for="email">Email address</label>
+              <input name="email" id="email" type="text" maxlength="100" />
+            </div>
+            <div class="pair">
+              <div class="pure-control-group">
+                <label for="first-name">First name</label>
+                <input name="first-name" id="first-name" type="text" maxlength="30" />
+              </div>
+              <div class="pure-control-group">
+                <label for="last-name">Last name</label>
+                <input name="last-name" id="last-name" type="text" maxlength="30" />
+              </div>
+            </div>
+            <div class="pure-controls">
+              <button id="submit-button" type="submit" class="pure-button pure-button-primary">Create account</button>
+            </div>
+            <p>By registering you agree to our <a href="https://github.com/userappstore/policies/blob/master/Terms-of-Service.md">terms of service</a>, <a href="https://github.com/userappstore/policies/blob/master/User-Guidelines.md">user guidelines</a> and accept our <a href="https://github.com/userappstore/policies/blob/master/Privacy-Policy.md">privacy policy</a>.</p>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-2-5">
+      </div>
+      <div class="pure-u-3-5">
+        <h2>Code your own single page apps</h2>
+        <p>Our free project editor lets you code single page apps right in your browser.  They can be shared, installed, published to the app store, or downloaded to host on your own server!</p>
+        <p>When you host your single page app yourself it is bundled with <a href="https://github.com/userappstore/dashboard">Dashboard</a>, with optional modules available for <a href="https://github.com/userappstore/stripe-subscriptions">Stripe Subscriptions</a> and <a href="https://github.com/userappstore/organizations">Organizations</a> ready to launch as your own SaaS with the same billing and account features.</p>
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-3-5">
+        <h2>Panelled interface for using apps</h2>
+        <p>Your installed apps can open side by side, above and below, any combination you want powered by <a href="https://golden-layout.com/">Golden Layout</a>.</p>
+        <p>On a large, high resolution monitor you might arrange dozens of different web applications comfortably on your screen, especially if care is taken with responsive designs.</p>
+      </div>
+      <div class="pure-u-2-5">
+    
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-2-5">
+      </div>
+      <div class="pure-u-3-5">
+        <h2>App store powered by Stripe Connect</h2>
+        <p>To publish to our app store you must complete a personal or company registration providing relevant contact information that will be verified.</p>
+        <p>There is no charge for this registration, although there are some Stripe fees if your account is earning money.</p>
+        <p>We ask for at least 5% of your subscription revenue, if you wish to support our efforts beyond that you may.</p>
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-3-5">
+        <h2>Support for organizations</h2>
+        <p>When you subscribe to something in our app store you can do so individually or on behalf of an organization you are in.  Organization members can be included in your subscription or setup their own subscription when installing the app themselves.</p>
+        <p>You can also use organizations to share administrative access to apps published on the app store, shared projects, and imported web servers.</p>
+      </div>
+      <div class="pure-u-2-5">
+    
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-2-5">
+      
+      </div>
+      <div class="pure-u-3-5">
+        <h2>Privacy</h2>
+        <p>There are no tracking, advertisers, social logins or third-party assets collecting your personal information or broadcasting your browsing activity.</p>
+        <h3>However</h3>
+        <p>This website is a portal for using web apps created by others.  There are many services and remotely-hosted resources developers may use to improve their apps so third parties may be privvy to some usage information.</p>
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-3-5">
+        <h2>Completely open source software</h2>
+        <p>You can deploy our app store software to your own computer or web hosting.  The software contains two components, a dashboard server and an application server. They are both <a href="https://nodejs.org">NodeJS</a> projects and each supports local file system, <a href="https://redis.io">Redis</a>, <a href="https://postgresql.org">PostgreSQL</a> or <a href="https://aws.amazon.com/s3">S3</a>/<a href="https://digitalocean.com/products/spaces">Spaces</a>/etc as storage.</p>
+        <p>The dashboard server provides a complete user account and billing system for web apps, via <a href="https://github.com/userappstore/dashboard">Dashboard</a> extended with modules for <a href="https://github.com/userappstore/stripe-subscriptions">Stripe Subscriptions</a>, <a href="https://github.com/userappstore/stripe-connect">Stripe Connect</a> and <a href="https://github.com/userappstore/organizations">Organizations</a>.</p>
+        <p>The application server provides the project editor, app store, app installation and removal process.  Dashboard proxies the application server to create a complete site, some content coming from each server.  Application servers can be written in any language and use Dashboard's API to access user data.</p>
+        <a class="app-store" href="https://github.com/userappstore/app-store-dashboard-server">
+            App Store Dashboard Server
+        </a>
+        <a class="app-store" href="https://github.com/userappstore/app-store-application-server">
+          App Store Application Server
+        </a>
+      </div>
+      <div class="pure-u-2-5">
+      </div>
+    </div>
+  </body>
+</html>
+
