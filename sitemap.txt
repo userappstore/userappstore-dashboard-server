@@ -54,6 +54,7 @@ userappstore/src/www/server/bind-stripekey.js
 @userappstore/stripe-connect/src/server/stripe-file-upload.js
 
 URL ---------------------------------------------------------------- AUTH ---- LOCK --- TEMPLATE ----- HTTP REQUESTS --------------- NODEJS ------------------------------------- HTML ---------------------------------------
+/                                                                    GUEST              FULLSCREEN     GET                                                                        /src/www                                    
 /account                                                                                               GET                           @userappstore/dashboard                      @userappstore/dashboard                     
 /account/authorize                                                                      FULLSCREEN     GET POST                      @userappstore/dashboard                      @userappstore/dashboard                     
 /account/change-password                                                                               GET POST                      @userappstore/dashboard                      @userappstore/dashboard                     
