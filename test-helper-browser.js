@@ -1,10 +1,38 @@
 /* eslint-env mocha */
+console.log('thb')
+// require('./test-helper.js')
 const fs = require('fs')
+const util = require('util')
+
+const waitForWebhook = util.promisify(async (webhookType, matching, callback) => {
+  if (process.env.DEBUG_ERRORS) {
+    console.log('waiting', webhookType)
+  }
+  async function wait() {
+    if (global.testEnded) {
+      return
+    }
+    if (!global.webhooks || !global.webhooks.length) {
+      return setTimeout(wait, 10)
+    }
+    for (const received of global.webhooks) {
+      if (received.type !== webhookType) {
+        continue
+      }
+      if (matching(received)) {
+        return callback(null, received)
+      }
+    }
+    return setTimeout(wait, 10)
+  }
+  return setTimeout(wait, 10)
+})
 
 module.exports = {
   completeForm,
   clickFrameLink,
-  clickPageLink
+  clickPageLink,
+  waitForWebhook
 }
 
 afterEach(() => {

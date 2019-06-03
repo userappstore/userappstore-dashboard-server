@@ -2,10 +2,8 @@
 const assert = require('assert')
 const puppeteer = require('puppeteer')
 const TestHelperBrowser = require('../../test-helper-browser.js')
-const TestHelper = require('@userappstore/stripe-subscriptions/test-helper.js')
 const testUserData = require('@userappstore/dashboard/test-data.json')
 const headless = process.env.SHOW_BROWSERS !== 'true'
-const util = require('util')
 
 describe(`tests/cancelling-organization-subscription-pending`, () => {
   it('should work via UI browsing', async () => {
@@ -19,7 +17,7 @@ describe(`tests/cancelling-organization-subscription-pending`, () => {
     const ownerPages = await browser1.pages()
     const ownerTab = ownerPages[0]
     await ownerTab.setViewport({ width: 1440, height: 900 })
-    await ownerTab.goto(global.dashboardServer, { waitLoad: true, waitNetworkIdle: true })
+    await ownerTab.goto(process.env.DASHBOARD_SERVER, { waitLoad: true, waitNetworkIdle: true })
     await ownerTab.waitForSelector('body')
     await TestHelperBrowser.completeForm(ownerTab, {
       username: 'owner-username',
@@ -42,7 +40,7 @@ describe(`tests/cancelling-organization-subscription-pending`, () => {
     let developerPages = await browser2.pages()
     let developerTab = developerPages[0]
     await developerTab.setViewport({ width: 1440, height: 900 })
-    await developerTab.goto(global.dashboardServer, { waitLoad: true, waitNetworkIdle: true })
+    await developerTab.goto(process.env.DASHBOARD_SERVER, { waitLoad: true, waitNetworkIdle: true })
     await TestHelperBrowser.completeForm(developerTab, {
       username: 'publisher-username',
       password: 'publisher-password',
@@ -232,7 +230,7 @@ describe(`tests/cancelling-organization-subscription-pending`, () => {
     const browser3Pages = await browser3.pages()
     const customer1Tab = browser3Pages[0]
     await customer1Tab.setViewport({ width: 1440, height: 900 })
-    await customer1Tab.goto(global.dashboardServer, { waitLoad: true, waitNetworkIdle: true })
+    await customer1Tab.goto(process.env.DASHBOARD_SERVER, { waitLoad: true, waitNetworkIdle: true })
     await TestHelperBrowser.completeForm(customer1Tab, {
       username: 'customer1-username',
       password: 'customer1-password',
@@ -278,7 +276,7 @@ describe(`tests/cancelling-organization-subscription-pending`, () => {
     const browser4Pages = await browser4.pages()
     const customer2Tab = browser4Pages[0]
     await customer2Tab.setViewport({ width: 1440, height: 900 })
-    await customer2Tab.goto(global.dashboardServer, { waitLoad: true, waitNetworkIdle: true })
+    await customer2Tab.goto(process.env.DASHBOARD_SERVER, { waitLoad: true, waitNetworkIdle: true })
     await TestHelperBrowser.completeForm(customer2Tab, {
       username: 'customer2-username',
       password: 'customer2-password',
@@ -337,7 +335,7 @@ describe(`tests/cancelling-organization-subscription-pending`, () => {
     global.webhooks = []
     await TestHelperBrowser.completeForm(customer1Tab, {})
     await customer1Tab.waitForSelector('#application-iframe', { waitLoad: true, waitNetworkIdle: true })
-    await TestHelper.waitForWebhook('invoice.updated', (stripeEvent) => {
+    await TestHelperBrowser.waitForWebhook('invoice.updated', (stripeEvent) => {
       if (stripeEvent.data.object.amount_paid) {
         return true
       }

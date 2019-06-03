@@ -1,5 +1,6 @@
 /* eslint-env mocha */
-global.applicationPath = __dirname
+console.log('test helper starting up')
+global.applicationPath = `${__dirname}/node_modules/@userappstore/app-store-dashboard-server`
 
 const stripeKey = {
   api_key: process.env.STRIPE_KEY

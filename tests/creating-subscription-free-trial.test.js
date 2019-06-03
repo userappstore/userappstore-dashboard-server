@@ -17,7 +17,7 @@ describe(`tests/creating-subscription-free-trial`, () => {
     const ownerPages = await browser1.pages()
     const ownerTab = ownerPages[0]
     await ownerTab.setViewport({ width: 1440, height: 900 })
-    await ownerTab.goto(global.dashboardServer, { waitLoad: true, waitNetworkIdle: true })
+    await ownerTab.goto(process.env.DASHBOARD_SERVER, { waitLoad: true, waitNetworkIdle: true })
     await ownerTab.waitForSelector('body')
     await TestHelperBrowser.completeForm(ownerTab, {
       username: 'owner-username',
@@ -40,7 +40,7 @@ describe(`tests/creating-subscription-free-trial`, () => {
     let developerPages = await browser2.pages()
     let developerTab = developerPages[0]
     await developerTab.setViewport({ width: 1440, height: 900 })
-    await developerTab.goto(global.dashboardServer, { waitLoad: true, waitNetworkIdle: true })
+    await developerTab.goto(process.env.DASHBOARD_SERVER, { waitLoad: true, waitNetworkIdle: true })
     await TestHelperBrowser.completeForm(developerTab, {
       username: 'publisher-username',
       password: 'publisher-password',
@@ -231,7 +231,7 @@ describe(`tests/creating-subscription-free-trial`, () => {
     const browser3Pages = await browser3.pages()
     const customer1Tab = browser3Pages[0]
     await customer1Tab.setViewport({ width: 1440, height: 900 })
-    await customer1Tab.goto(global.dashboardServer, { waitLoad: true, waitNetworkIdle: true })
+    await customer1Tab.goto(process.env.DASHBOARD_SERVER, { waitLoad: true, waitNetworkIdle: true })
     await TestHelperBrowser.completeForm(customer1Tab, {
       username: 'customer1-username',
       password: 'customer1-password',

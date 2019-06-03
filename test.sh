@@ -13,4 +13,4 @@ STRIPE_JS="false" \
 IP="0.0.0.0" \
 PAGE_SIZE=40 \
 STORAGE_PATH="~/tmp/data1" \
-mocha src/www --recursive --timeout 480000 --slow 4800000
+mocha src/tests/*.test.js --timeout 480000 --slow 4800000

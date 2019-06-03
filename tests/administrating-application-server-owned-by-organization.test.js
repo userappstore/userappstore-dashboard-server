@@ -5,7 +5,7 @@ const TestHelperBrowser = require('../../test-helper-browser.js')
 const testUserData = require('@userappstore/dashboard/test-data.json')
 const headless = process.env.SHOW_BROWSERS !== 'true'
 
-describe(`tests/administrating-application-server-owned-by-organization`, () => {
+describe.only(`tests/administrating-application-server-owned-by-organization`, () => {
   it('should work via UI browsing', async () => {
     global.pageSize = 40
     // create owner account
@@ -17,7 +17,7 @@ describe(`tests/administrating-application-server-owned-by-organization`, () => 
     const ownerPages = await browser1.pages()
     const ownerTab = ownerPages[0]
     await ownerTab.setViewport({ width: 1440, height: 900 })
-    await ownerTab.goto(global.dashboardServer, { waitLoad: true, waitNetworkIdle: true })
+    await ownerTab.goto(process.env.DASHBOARD_SERVER, { waitLoad: true, waitNetworkIdle: true })
     await ownerTab.waitForSelector('body')
     await TestHelperBrowser.completeForm(ownerTab, {
       username: 'owner-username',
@@ -40,7 +40,7 @@ describe(`tests/administrating-application-server-owned-by-organization`, () => 
     let developerPages = await browser2.pages()
     let developerTab = developerPages[0]
     await developerTab.setViewport({ width: 1440, height: 900 })
-    await developerTab.goto(global.dashboardServer, { waitLoad: true, waitNetworkIdle: true })
+    await developerTab.goto(process.env.DASHBOARD_SERVER, { waitLoad: true, waitNetworkIdle: true })
     await TestHelperBrowser.completeForm(developerTab, {
       username: 'developer-username',
       password: 'developer-password',
@@ -118,7 +118,7 @@ describe(`tests/administrating-application-server-owned-by-organization`, () => 
     const browser3Pages = await browser3.pages()
     const developer2Tab = browser3Pages[0]
     await developer2Tab.setViewport({ width: 1440, height: 900 })
-    await developer2Tab.goto(global.dashboardServer, { waitLoad: true, waitNetworkIdle: true })
+    await developer2Tab.goto(process.env.DASHBOARD_SERVER, { waitLoad: true, waitNetworkIdle: true })
     await TestHelperBrowser.completeForm(developer2Tab, {
       username: 'developer2-username',
       password: 'developer2-password',
