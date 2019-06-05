@@ -40,7 +40,7 @@ Content handlers:
 Server handlers:
 @userappstore/stripe-subscriptions/src/server/bind-stripekey.js
 @userappstore/app-store-dashboard-server/src/server/clean-deleted-subscriptions.js
-@userappstore/app-store-dashboard-server/src/server/remove-template-after-authorization.js
+@userappstore/app-store-dashboard-server/src/server/remove-template-for-ajax.js
 @userappstore/app-store-dashboard-server/src/server/connected-subscription-webhooks.js
 @userappstore/app-store-dashboard-server/src/server/skip-urls-from-within-templates.js
 @userappstore/app-store-dashboard-server/src/server/api-as-alternative-server.js
