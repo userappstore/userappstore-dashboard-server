@@ -30,6 +30,7 @@ Dashboard modules:
 Content handlers:
 @userappstore/app-store-dashboard-server/src/content/installs-and-collections-menu.js
 @userappstore/app-store-dashboard-server/src/content/remap-install-links.js
+@userappstore/app-store-dashboard-server/src/content/remap-account-links.js
 @userappstore/app-store-dashboard-server/src/content/remap-project-links.js
 @userappstore/app-store-dashboard-server/src/content/remap-administrator-links.js
 @userappstore/app-store-dashboard-server/src/content/install-account-menu.js
@@ -44,17 +45,14 @@ Server handlers:
 @userappstore/app-store-dashboard-server/src/server/connected-subscription-webhooks.js
 @userappstore/app-store-dashboard-server/src/server/skip-urls-from-within-templates.js
 @userappstore/app-store-dashboard-server/src/server/api-as-alternative-server.js
-@userappstore/app-store-dashboard-server/src/server/uploading-app-store-assets.js
 @userappstore/app-store-dashboard-server/src/server/serverid-in-url.js
 @userappstore/app-store-dashboard-server/src/server/installid-in-url.js
 @userappstore/app-store-dashboard-server/src/server/connect-webhook-key.js
 @userappstore/maxmind-geoip/src/server/bind-country.js
 @userappstore/stripe-subscriptions/src/server/bind-stripekey.js
-userappstore/src/www/server/bind-stripekey.js
-@userappstore/stripe-connect/src/server/stripe-file-upload.js
+@userappstore/maxmind-geoip
 
 URL ---------------------------------------------------------------- AUTH ---- LOCK --- TEMPLATE ----- HTTP REQUESTS --------------- NODEJS ------------------------------------- HTML ---------------------------------------
-/                                                                    GUEST              FULLSCREEN     GET                                                                        /src/www                                    
 /account                                                                                               GET                           @userappstore/dashboard                      @userappstore/dashboard                     
 /account/authorize                                                                      FULLSCREEN     GET POST                      @userappstore/dashboard                      @userappstore/dashboard                     
 /account/change-password                                                                               GET POST                      @userappstore/dashboard                      @userappstore/dashboard                     
