@@ -1,0 +1,52 @@
+<!doctype html>
+<html auth="false" template="false">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Register</title>
+    <link href="/public/pure-min.css" rel="stylesheet" />
+    <link href="/public/content.css" rel="stylesheet" />
+  </head>
+  <body class="entry-form">
+    <form action="/account/register" method="POST" class="pure-form pure-form-stacked entry-form">
+      <fieldset>
+        <h3>Register account</h3>
+        <div id="message-container"></div>
+        <div class="pure-control-group">
+          <label for="username">Signin username</label>
+          <input placeholder="8+ characters" name="username" id="username" type="text" maxlength="1000" />
+        </div>
+        <div class="pair">
+          <div class="pure-control-group">
+            <label for="password">Password</label>
+            <input placeholder="8+ characters" name="password" id="password" type="password" maxlength="1000" />
+          </div>
+          <div class="pure-control-group">
+            <label for="confirm">Confirm password</label>
+            <input name="confirm" id="confirm" type="password" maxlength="1000" />
+          </div>
+        </div>
+        <div class="pure-control-group">
+          <label for="email">Email address</label>
+          <input name="email" id="email" type="text" maxlength="100" />
+        </div>
+        <div class="pair">
+          <div class="pure-control-group">
+            <label for="first-name">First name</label>
+            <input name="first-name" id="first-name" type="text" maxlength="30" />
+          </div>
+          <div class="pure-control-group">
+            <label for="last-name">Last name</label>
+            <input name="last-name" id="last-name" type="text" maxlength="30" />
+          </div>
+        </div>
+        <div class="pure-controls">
+          <button id="submit-button" type="submit" class="pure-button pure-button-primary">Create account</button>
+          <a href="/account/signin" class="pure-button">I have an account</a>
+        </div>
+        <p>By registering you agree to our <a href="https://github.com/userappstore/policies/blob/master/Terms-of-Service.md">terms of service</a>, <a href="https://github.com/userappstore/policies/blob/master/User-Guidelines.md">user guidelines</a> and accept our <a href="https://github.com/userappstore/policies/blob/master/Privacy-Policy.md">privacy policy</a>.</p>
+      </fieldset>
+    </form>
+  </body>
+</html>
+
