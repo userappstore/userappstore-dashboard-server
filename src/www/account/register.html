@@ -6,45 +6,66 @@
     <title>Register</title>
     <link href="/public/pure-min.css" rel="stylesheet" />
     <link href="/public/content.css" rel="stylesheet" />
+    <style>
+    .entry-form { width: 60rem }
+    .pure-control-group input { background-color: #DDD !important }
+    h2, p { text-align: left }
+    p { margin-right: 2rem }
+    .pair div { width: 49%; display: inline-block }
+    .pair div:first-of-type { margin-right: 2% }
+    a.pure-button { margin-left: 1rem }
+    </style>
   </head>
   <body class="entry-form">
     <form action="/account/register" method="POST" class="pure-form pure-form-stacked entry-form">
-      <fieldset>
-        <h3>Register account</h3>
-        <div id="message-container"></div>
-        <div class="pure-control-group">
-          <label for="username">Signin username</label>
-          <input placeholder="8+ characters" name="username" id="username" type="text" maxlength="1000" />
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <h2>UserAppStore</h2>
+          <p>Your account is free to create and use.  You can code your own single-page apps to share and install and import private web apps from any URL.</p>
+          <p>After providing billing information you can install apps published by verified developers on our app store, making it easy to start and end subscriptions and simple to cancel or refund.</p>
+          <p>By registering you agree to our <a
+              href="https://github.com/userappstore/policies/blob/master/Terms-of-Service.md">terms of service</a>, <a
+              href="https://github.com/userappstore/policies/blob/master/User-Guidelines.md">user guidelines</a> and accept our <a
+              href="https://github.com/userappstore/policies/blob/master/Privacy-Policy.md">privacy policy</a>.</p>
         </div>
-        <div class="pair">
+        <fieldset class="pure-u-1-2">
+          <h3>Register account</h3>
+          <div id="message-container"></div>
           <div class="pure-control-group">
-            <label for="password">Password</label>
-            <input placeholder="8+ characters" name="password" id="password" type="password" maxlength="1000" />
+            <label for="username">Signin username</label>
+            <input placeholder="8+ characters" name="username" id="username" type="text" maxlength="1000" />
           </div>
-          <div class="pure-control-group">
-            <label for="confirm">Confirm password</label>
-            <input name="confirm" id="confirm" type="password" maxlength="1000" />
+          <div class="pair">
+            <div class="pure-control-group">
+              <label for="password">Password</label>
+              <input placeholder="8+ characters" name="password" id="password" type="password" maxlength="1000" />
+            </div>
+            <div class="pure-control-group">
+              <label for="confirm">Confirm password</label>
+              <input name="confirm" id="confirm" type="password" maxlength="1000" />
+            </div>
           </div>
-        </div>
-        <div id="email-container" class="pure-control-group">
-          <label for="Email">Email address</label>
-          <input name="email" id="email" type="text" maxlength="100" />
-        </div>
-        <div id="first-name-container" class="pure-control-group">
-          <label for="first-name">First name</label>
-          <input name="first-name" id="first-name" type="text" maxlength="30" />
-        </div>
-        <div id="last-name-container" class="pure-control-group">
-          <label for="last-name">Last name</label>
-          <input name="last-name" id="last-name" type="text" maxlength="30" />
-        </div>
-        <div class="pure-controls">
-          <button id="submit-button" type="submit" class="pure-button pure-button-primary">Create account</button>
-          <a href="/account/signin" class="pure-button">I have an account</a>
-        </div>
-        <p>By registering you agree to our <a href="https://github.com/userappstore/policies/blob/master/Terms-of-Service.md">terms of service</a>, <a href="https://github.com/userappstore/policies/blob/master/User-Guidelines.md">user guidelines</a> and accept our <a href="https://github.com/userappstore/policies/blob/master/Privacy-Policy.md">privacy policy</a>.</p>
-      </fieldset>
-    </form>
+          <div id="email-container" class="pure-control-group">
+            <label for="Email">Email address</label>
+            <input name="email" id="email" type="text" maxlength="100" />
+          </div>
+          <div class="pure-control-group pair">
+            <div id="first-name-container">
+              <label for="first-name">First name</label>
+              <input name="first-name" id="first-name" type="text" maxlength="30" />
+            </div>
+            <div id="last-name-container">
+              <label for="last-name">Last name</label>
+              <input name="last-name" id="last-name" type="text" maxlength="30" />
+            </div>
+          </div>
+          <div class="pure-controls">
+            <button id="submit-button" type="submit" class="pure-button pure-button-primary">Create account</button>
+            <a href="/account/signin" class="pure-button">I have an account</a>
+          </div>
+        </fieldset>
+      </form>
+    </div>
   </body>
 </html>
 
