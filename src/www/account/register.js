@@ -1,1 +1,0 @@
-module.exports = require('@userappstore/dashboard/src/www/account/register.js')

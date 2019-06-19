@@ -31,7 +31,6 @@ Content handlers:
 @userappstore/app-store-dashboard-server/src/content/installs-and-collections-menu.js
 @userappstore/app-store-dashboard-server/src/content/remap-install-links.js
 @userappstore/app-store-dashboard-server/src/content/remap-account-links.js
-@userappstore/app-store-dashboard-server/src/content/remap-project-links.js
 @userappstore/app-store-dashboard-server/src/content/remap-administrator-links.js
 @userappstore/app-store-dashboard-server/src/content/install-account-menu.js
 @userappstore/app-store-dashboard-server/src/content/server-administrator-menu.js
@@ -106,7 +105,7 @@ URL ---------------------------------------------------------------- AUTH ---- L
 /account/organizations/transfer-organization                                                           GET POST                      @userappstore/organizations                  @userappstore/organizations                 
 /account/profile                                                                                       GET                           @userappstore/dashboard                      @userappstore/dashboard                     
 /account/profiles                                                                                      GET                           @userappstore/dashboard                      @userappstore/dashboard                     
-/account/register                                                    GUEST              FULLSCREEN     GET POST                      @userappstore/dashboard                      @userappstore/dashboard                     
+/account/register                                                    GUEST              FULLSCREEN     GET POST                      /src/www                                     /src/www                                    
 /account/reset-account                                               GUEST              FULLSCREEN     GET POST                      @userappstore/dashboard                      @userappstore/dashboard                     
 /account/reset-code                                                                                    GET                           @userappstore/dashboard                      @userappstore/dashboard                     
 /account/reset-codes                                                                                   GET                           @userappstore/dashboard                      @userappstore/dashboard                     
@@ -488,8 +487,11 @@ URL ---------------------------------------------------------------- AUTH ---- L
 /api/application-server/organization-subscriptions-count                                               GET                           @userappstore/app-store-dashboard-server                                                 
 /api/application-server/sitemap                                      GUEST                             GET                           @userappstore/app-store-dashboard-server                                                 
 /api/application-server/stripe-account                                                                 GET                           @userappstore/app-store-dashboard-server                                                 
+/api/application-server/subscription                                                                   GET                           @userappstore/app-store-dashboard-server                                                 
+/api/application-server/subscription-invoices                                                          GET                           @userappstore/app-store-dashboard-server                                                 
 /api/application-server/subscriptions                                                                  GET                           @userappstore/app-store-dashboard-server                                                 
 /api/application-server/subscriptions-count                                                            GET                           @userappstore/app-store-dashboard-server                                                 
+/api/application-server/upcoming-invoice                                                               GET                           @userappstore/app-store-dashboard-server                                                 
 /api/application-server/update-default-profile                                                         PATCH                         @userappstore/app-store-dashboard-server                                                 
 /api/user/account                                                                                      GET                           @userappstore/dashboard                                                                  
 /api/user/connect/additional-owner                                                                     GET                           @userappstore/stripe-connect                                                             
@@ -560,6 +562,7 @@ URL ---------------------------------------------------------------- AUTH ---- L
 /api/user/reset-codes                                                                                  GET                           @userappstore/dashboard                                                                  
 /api/user/reset-codes-count                                                                            GET                           @userappstore/dashboard                                                                  
 /api/user/reset-session-key                                                    LOCK                    PATCH                         @userappstore/dashboard                                                                  
+/api/user/reset-session-locked                                                                         PATCH                         @userappstore/dashboard                                                                  
 /api/user/reset-session-unlocked                                                                       PATCH                         @userappstore/dashboard                                                                  
 /api/user/session                                                                                      GET                           @userappstore/dashboard                                                                  
 /api/user/sessions                                                                                     GET                           @userappstore/dashboard                                                                  
