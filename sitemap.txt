@@ -32,6 +32,7 @@ Content handlers:
 @userappstore/app-store-dashboard-server/src/content/remap-install-links.js
 @userappstore/app-store-dashboard-server/src/content/remap-account-links.js
 @userappstore/app-store-dashboard-server/src/content/remap-administrator-links.js
+@userappstore/app-store-dashboard-server/src/content/resource-link-integrity.js
 @userappstore/app-store-dashboard-server/src/content/install-account-menu.js
 @userappstore/app-store-dashboard-server/src/content/server-administrator-menu.js
 @userappstore/app-store-dashboard-server/src/content/reduced-iframe-sandbox.js
