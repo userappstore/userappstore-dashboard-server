@@ -5,9 +5,9 @@ You should work with the [app store dashboard server](https://github.com/userapp
 
      $ npm init
      $ npm install @userappstore/app-store-dashboard-server
-     $ npm install @userappstore/storage-redis
+     $ npm install @userdashboard/storage-redis
      $ node main.js
 
     # main.js
-    const server = require('@userappstore/dashboard')
+    const server = require('@userdashboard/dashboard')
     server.start(__dirname)
