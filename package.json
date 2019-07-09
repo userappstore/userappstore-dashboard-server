@@ -18,9 +18,7 @@
   },
   "dependencies": {
     "@userappstore/app-store-dashboard-server": "git+https://github.com/userappstore/app-store-dashboard-server.git",
-    "@userdashboard/storage-cache-redis": "git+https://github.com/userappstore/storage-cache-redis.git",
-    "@userdashboard/storage-postgresql": "git+https://github.com/userappstore/storage-postgresql.git",
-    "@userdashboard/storage-cache-redis": "git+https://github.com/userappstore/storage-cache-redis.git",
-    "@userdashboard/storage-postgresql": "git+https://github.com/userappstore/storage-postgresql.git"
+    "@userdashboard/storage-cache-redis": "^1.0.0",
+    "@userdashboard/storage-postgresql": "^1.0.0"
   }
 }
