@@ -51,6 +51,7 @@ Server handlers:
 @userdashboard/maxmind-geoip
 
 URL ---------------------------------------------------------------- AUTH ---- TEMPLATE ----- HTTP REQUESTS --------------- NODEJS ------------------------------------- HTML ---------------------------------------
+/                                                                    GUEST     FULLSCREEN     GET                                                                        /src/www                                    
 /account                                                                                      GET                           @userdashboard/dashboard                     @userdashboard/dashboard                    
 /account/change-password                                                                      GET POST                      @userdashboard/dashboard                     @userdashboard/dashboard                    
 /account/change-username                                                                      GET POST                      @userdashboard/dashboard                     @userdashboard/dashboard                    
